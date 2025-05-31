@@ -1,0 +1,183 @@
+/* [ TokyoNight Colors ] */
+@define-color bg #222436;
+@define-color bg_t rgba(34, 36, 54, 0.3);
+@define-color bg_t2 rgba(34, 36, 54, 0.8);
+@define-color bg_dark #1e2030;
+@define-color bg_dark1 #191B29;
+@define-color bg_highlight #2f334d;
+@define-color blue #82aaff;
+@define-color blue0 #3e68d7;
+@define-color blue1 #65bcff;
+@define-color blue2 #0db9d7;
+@define-color blue5 #89ddff;
+@define-color blue6 #b4f9f8;
+@define-color blue7 #394b70;
+@define-color comment #636da6;
+@define-color cyan #86e1fc;
+@define-color dark3 #545c7e;
+@define-color dark5 #737aa2;
+@define-color fg #c8d3f5;
+@define-color fg_dark #828bb8;
+@define-color fg_gutter #3b4261;
+@define-color green #c3e88d;
+@define-color green1 #4fd6be;
+@define-color green2 #41a6b5;
+@define-color magenta #c099ff;
+@define-color magenta2 #ff007c;
+@define-color orange #ff966c;
+@define-color purple #fca7ea;
+@define-color red #ff757f;
+@define-color red1 #c53b53;
+@define-color teal #4fd6be;
+@define-color terminal_black #444a73;
+@define-color yellow #ffc777;
+
+/* [ Secondary Colors ] */
+/*@define-color wb-bg rgba(43, 48, 59, 0.3);*/
+/*@define-color ws-bg rgba(36, 40, 59, 0.8);*/
+/*@define-color wp-blue #242859;*/
+/*@define-color wp-white #c0caf5;*/
+/*@define-color mod-grey #32344a;*/
+
+* {
+  border: none;
+  border-radius: 10px;
+  font-family: JetbrainsMono Nerd Font;
+  font-size: 12pt;
+  min-height: 0;
+}
+
+window#waybar {
+  color: @fg;
+  background: @bg_t;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#workspaces {
+  margin-left: 10px;
+}
+
+#workspaces button {
+  margin: 5px;
+  padding: 5px 10px;
+  color: @fg;
+  background-color: @bg_t2;
+}
+
+/* Hyprland active workspace */
+#workspaces button.active {
+  padding: 5px 10px;
+  color: @bg;
+  background-color: @blue;
+}
+
+/* Sway focused workspace */
+#workspaces button.focused {
+  padding: 5px 10px;
+  color: @bg;
+  background-color: @blue;
+}
+
+#window,
+#custom-date,
+#clock,
+#battery,
+#backlight,
+#pulseaudio,
+#network,
+#tray {
+  background-color: @bg_highlight;
+  padding: 5px 10px;
+  margin: 5px 0px;
+}
+
+#window {
+  background-color: @bg_t2;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px 10px;
+}
+
+#tray {
+  background-color: @bg_highlight;
+  padding: 5px 10px;
+  margin: 5px 0px;
+}
+
+tray#waybar.empty #tray {
+  background-color: transparent;
+}
+
+#custom-date {
+  color: @blue;
+}
+
+#custom-power {
+  color: @bg_highlight;
+  background-color: @red;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  padding: 5px 10px;
+}
+
+#clock {
+  color: @blue;
+  margin-right: 10px;
+}
+
+#battery {
+  color: @green;
+}
+
+#battery.charging,
+#battery.plugged {
+  background-color: @green;
+  color: @bg_highlight;
+}
+
+#battery.warning:not(.charging) {
+  background-color: @red;
+  color: @bg_highlight;
+}
+
+#battery.critical:not(.charging) {
+  background-color: @red;
+  color: @bg_highlight;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#backlight {
+  color: @fg;
+}
+
+#backlight.bright {
+  background-color: @fg;
+  color: @bg_highlight;
+}
+
+#network {
+  color: @yellow;
+}
+
+#network.disconnected {
+  background-color: @red;
+  color: @bg_highlight;
+}
+
+#pulseaudio {
+  color: @cyan;
+}
+
+#pulseaudio.muted {
+  background-color: @cyan;
+  color: @bg_highlight;
+}

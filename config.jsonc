@@ -1,0 +1,307 @@
+// -*- mode: jsonc -*-
+// https://github.com/Alexays/Waybar
+// https://github.com/Alexays/Waybar/wiki
+{
+    //
+    // [ General Way Bar Settings ]
+    //
+    // https://github.com/Alexays/Waybar/wiki/Configuration
+    "layer": "top",
+    "position": "top",
+    "height": 0,
+    "width": 0,
+    "spacing": 4,
+    "reload_style_on_change": true,
+    // [ Module Layout ]
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode",
+        "hyprland/workspaces",
+        "hyprland/submap"
+    ],
+    "modules-center": [
+        "sway/window",
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "backlight",
+        "pulseaudio",
+        "network",
+        "battery",
+        "clock",
+        "tray"
+    ],
+    //
+    // [ Modules Configuration ]
+    //
+    // [ Sway Moduels ]
+    // https://github.com/Alexays/Waybar/wiki/Module:-Sway
+    //
+    // https://github.com/Alexays/Waybar/wiki/Module:-Sway#workspaces
+    //
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "warp-on-scroll": false
+    },
+    // https://github.com/Alexays/Waybar/wiki/Module:-Sway#window
+    //
+    "sway/window": {
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "󰈹 - $1",
+            "Alacritty": "  Alacritty",
+            "Ghostty": "  Ghostty",
+            "(.*) - Discord": "  - $1"
+        }
+    },
+    // [ Hyprland Modules ]
+    // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland
+    //
+    // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#workspaces
+    //
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "warp-on-scroll": false,
+        "show-special": true,
+        "format": "{name}: {icon}",
+        "format-icons": {
+            "1-terminal": " ",
+            "2-web": "󰈹 ",
+            "3-gaming": " ",
+            "4-discord": " ",
+            "6-media": " ",
+            "0-monitor": " ",
+            "special": "󱡄 ",
+            "magic": "󱡄 ",
+            "urgent": " ",
+            "focused": " ",
+            "default": " "
+        }
+    },
+    // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#window
+    //
+    "hyprland/window": {
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "󰈹 - $1",
+            "Alacritty": "  Alacritty",
+            "Ghostty": "  Ghostty",
+            "(.*) - Discord": "  - $1"
+        }
+    },
+    // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#submap
+    //
+    "hyprland/submap": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    // [ General Modules ]
+    //
+    // https://github.com/Alexays/Waybar/wiki/Module:-Backlight
+    //
+    "backlight": {
+        // "device": "acpi_video1",
+        "interval": 5,
+        "states": {
+            "bright": 75
+        },
+        "format": "{icon}{percent}%",
+        "format-icons": [
+            " ",
+            " ",
+            " ",
+            " ",
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
+        ],
+        "tooltip": true,
+        "tooltip-format": "Middle:\t0%\nClick:\t25%\nDouble:\t50%\nTriple:\t75%\nRight:\t100%",
+        "on-click": "brightnessctl set 25%",
+        "on-double-click": "brightnessctl set 50%",
+        "on-triple-click": "brightnessctl set 75%",
+        "on-click-right": "brightnessctl set 100%",
+        "on-click-middle": "brightnessctl set 0%"
+    },
+    // https://github.com/Alexays/Waybar/wiki/Module:-Battery
+    //
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}%  ",
+        "format-plugged": "{capacity}%  ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
+        ]
+    },
+    // https://github.com/Alexays/Waybar/wiki/Module:-Clock
+    //
+    "clock": {
+        // "timezone": "America/New_York",
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%B %d,%Y %I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    // https://github.com/Alexays/Waybar/wiki/Module:-CPU
+    //
+    "cpu": {
+        "format": "{usage}%  ",
+        "tooltip": false
+    },
+    // https://github.com/Alexays/Waybar/wiki/Module:-Idle-Inhibitor
+    //
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": " ",
+            "deactivated": " "
+        }
+    },
+    // https://github.com/Alexays/Waybar/wiki/Module:-Keyboard-State
+    //
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": " ",
+            "unlocked": " "
+        }
+    },
+    // https://github.com/Alexays/Waybar/wiki/Module:-Memory
+    //
+    "memory": {
+        "format": "{}%  "
+    },
+    // https://github.com/Alexays/Waybar/wiki/Module:-MPD
+    //
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}%  ",
+        "format-disconnected": "Disconnected  ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped  ",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"> </span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    // https://github.com/Alexays/Waybar/wiki/Module:-Network
+    //
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{icon}({signalStrength}%)",
+        "format-ethernet": "{ipaddr}/{cidr}  ",
+        "tooltip-format": "IP:\t{ipaddr}\nWAN:\t{essid}\n",
+        "format-linked": "{ifname} (No IP)  ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-icons": [
+            "󰤯 ",
+            "󰤟 ",
+            "󰤢 ",
+            "󰤥 ",
+            "󰤨 "
+        ]
+    },
+    // https://github.com/Alexays/Waybar/wiki/Module:-PowerProfilesDaemon
+    //
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": " ",
+            "performance": " ",
+            "balanced": " ",
+            "power-saver": " "
+        }
+    },
+    // https://github.com/Alexays/Waybar/wiki/Module:-PulseAudio
+    //
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}%  ",
+        "format-source-muted": " ",
+        "format-icons": {
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": " ",
+            "portable": " ",
+            "car": " ",
+            "default": [
+                " ",
+                " ",
+                " "
+            ]
+        },
+        "on-click-right": "pavucontrol",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+    // https://github.com/Alexays/Waybar/wiki/Module:-Temperature
+    //
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": [
+            " ",
+            " ",
+            " "
+        ]
+    },
+    // https://github.com/Alexays/Waybar/wiki/Module:-Tray
+    //
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    // [ Custom Modules ]
+    //
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": " ",
+            "default": "🎜 "
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    }
+}
