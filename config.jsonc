@@ -41,7 +41,7 @@
     //
     "sway/workspaces": {
         "disable-scroll": true,
-        "all-outputs": false,
+        "all-outputs": true,
         "warp-on-scroll": false
     },
     // https://github.com/Alexays/Waybar/wiki/Module:-Sway#window
