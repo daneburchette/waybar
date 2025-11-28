@@ -40,45 +40,45 @@
 /*@define-color mod-grey #32344a;*/
 
 * {
-    border: none;
-    border-radius: 10px;
-    font-family: JetbrainsMono Nerd Font;
-    font-size: 12pt;
-    min-height: 0;
+  border: none;
+  border-radius: 10px;
+  font-family: JetbrainsMono Nerd Font;
+  font-size: 12pt;
+  min-height: 0;
 }
 
 window#waybar {
-    color: @fg;
-    background: @bg_t;
+  color: @fg;
+  background: @bg_t;
 }
 
 window#waybar.empty #window {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 #workspaces {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 #workspaces button {
-    margin: 5px;
-    padding: 5px 10px;
-    color: @fg;
-    background-color: @bg_t2;
+  margin: 5px;
+  padding: 5px 10px;
+  color: @fg;
+  background-color: @bg_t2;
 }
 
 /* Hyprland active workspace */
 #workspaces button.active {
-    padding: 5px 10px;
-    color: @bg;
-    background-color: @blue;
+  padding: 5px 10px;
+  color: @bg;
+  background-color: @blue;
 }
 
 /* Sway focused workspace */
 #workspaces button.focused {
-    padding: 5px 10px;
-    color: @bg;
-    background-color: @blue;
+  padding: 5px 10px;
+  color: @bg;
+  background-color: @blue;
 }
 
 #window,
@@ -89,95 +89,95 @@ window#waybar.empty #window {
 #pulseaudio,
 #network,
 #tray {
-    background-color: @bg_highlight;
-    padding: 5px 10px;
-    margin: 5px 0px;
+  background-color: @bg_highlight;
+  padding: 5px 10px;
+  margin: 5px 0px;
 }
 
 #window {
-    background-color: @bg_t2;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 5px 10px;
+  background-color: @bg_t2;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px 10px;
 }
 
 #tray {
-    background-color: @bg_highlight;
-    padding: 5px 10px;
-    margin: 5px 0px;
+  background-color: @bg_highlight;
+  padding: 5px 10px;
+  margin: 5px 0px;
 }
 
 tray#waybar.empty #tray {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 #custom-date {
-    color: @blue;
+  color: @blue;
 }
 
 #custom-power {
-    color: @bg_highlight;
-    background-color: @red;
-    margin-right: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 0px;
-    padding: 5px 10px;
+  color: @bg_highlight;
+  background-color: @red;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  padding: 5px 10px;
 }
 
 #clock {
-    color: @blue;
-    margin-right: 10px;
+  color: @blue;
+  margin-right: 10px;
 }
 
 #battery {
-    color: @green;
+  color: @green;
 }
 
 #battery.charging,
 #battery.plugged {
-    background-color: @green;
-    color: @bg_highlight;
+  background-color: @green;
+  color: @bg_highlight;
 }
 
 #battery.warning:not(.charging) {
-    background-color: @red;
-    color: @bg_highlight;
+  background-color: @red;
+  color: @bg_highlight;
 }
 
 #battery.critical:not(.charging) {
-    background-color: @red;
-    color: @bg_highlight;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background-color: @red;
+  color: @bg_highlight;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #backlight {
-    color: @fg;
+  color: @fg;
 }
 
 #backlight.bright {
-    background-color: @fg;
-    color: @bg_highlight;
+  background-color: @fg;
+  color: @bg_highlight;
 }
 
 #network {
-    color: @yellow;
+  color: @yellow;
 }
 
 #network.disconnected {
-    background-color: @red;
-    color: @bg_highlight;
+  background-color: @red;
+  color: @bg_highlight;
 }
 
 #pulseaudio {
-    color: @cyan;
+  color: @cyan;
 }
 
 #pulseaudio.muted {
-    background-color: @cyan;
-    color: @bg_highlight;
+  background-color: @cyan;
+  color: @bg_highlight;
 }
