@@ -1,43 +1,38 @@
 /* [ TokyoNight Colors ] */
 @define-color bg #222436;
-@define-color bg_t rgba(34, 36, 54, 0.3);
-@define-color bg_t2 rgba(34, 36, 54, 0.8);
-@define-color bg_dark #1e2030;
-@define-color bg_dark1 #191B29;
+@define-color bg_opacity1 rgba(34, 36, 54, 0.3);
+@define-color bg_opacity2 rgba(34, 36, 54, 0.8);
 @define-color bg_highlight #2f334d;
-@define-color blue #82aaff;
-@define-color blue0 #3e68d7;
-@define-color blue1 #65bcff;
-@define-color blue2 #0db9d7;
-@define-color blue5 #89ddff;
-@define-color blue6 #b4f9f8;
-@define-color blue7 #394b70;
-@define-color comment #636da6;
-@define-color cyan #86e1fc;
-@define-color dark3 #545c7e;
-@define-color dark5 #737aa2;
-@define-color fg #c8d3f5;
-@define-color fg_dark #828bb8;
-@define-color fg_gutter #3b4261;
-@define-color green #c3e88d;
-@define-color green1 #4fd6be;
-@define-color green2 #41a6b5;
-@define-color magenta #c099ff;
-@define-color magenta2 #ff007c;
-@define-color orange #ff966c;
-@define-color purple #fca7ea;
+@define-color fg_1 #c8d3f5;
+@define-color fg_2 #828bb8;
+@define-color black #444a73;
 @define-color red #ff757f;
-@define-color red1 #c53b53;
-@define-color teal #4fd6be;
-@define-color terminal_black #444a73;
+@define-color orange #ff966c;
 @define-color yellow #ffc777;
+@define-color green #c3e88d;
+@define-color teal #4fd6be;
+@define-color cyan #86e1fc;
+@define-color blue #82aaff;
+@define-color purple #fca7ea;
+@define-color magenta #c099ff;
 
-/* [ Secondary Colors ] */
-/*@define-color wb-bg rgba(43, 48, 59, 0.3);*/
-/*@define-color ws-bg rgba(36, 40, 59, 0.8);*/
-/*@define-color wp-blue #242859;*/
-/*@define-color wp-white #c0caf5;*/
-/*@define-color mod-grey #32344a;*/
+/* [ Kanagawa Colors ] */
+/* @define-color bg #1f1f28; */
+/* @define-color bg_opacity1 rgba(31, 31, 40, 0.3); */
+/* @define-color bg_opacity2 rgba(31, 31, 40, 0.8); */
+/* @define-color bg_highlight #1f1f28; */
+/* @define-color fg_1 #dcd8ba; */
+/* @define-color fg_2 #c8c093; */
+/* @define-color black #16161d; */
+/* @define-color red #c34043; */
+/* @define-color orange        #ff966c; */
+/* @define-color yellow #c0a36e; */
+/* @define-color green #76946a; */
+/* @define-color teal #4fd6be; */
+/* @define-color cyan #6a9589; */
+/* @define-color blue #7e9cd8; */
+/* @define-color purple        #fca7ea; */
+/* @define-color magenta #957fb8; */
 
 * {
     border: none;
@@ -48,8 +43,8 @@
 }
 
 window#waybar {
-    color: @fg;
-    background: @bg_t;
+    color: @fg_1;
+    background: @bg_opacity1;
 }
 
 window#waybar.empty #window {
@@ -63,8 +58,8 @@ window#waybar.empty #window {
 #workspaces button {
     margin: 5px;
     padding: 5px 10px;
-    color: @fg;
-    background-color: @bg_t2;
+    color: @fg_1;
+    background-color: @bg_opacity2;
 }
 
 /* Hyprland active workspace */
@@ -95,7 +90,7 @@ window#waybar.empty #window {
 }
 
 #window {
-    background-color: @bg_t2;
+    background-color: @bg_opacity2;
     margin-left: 10px;
     margin-right: 10px;
     padding: 5px 10px;
@@ -156,11 +151,11 @@ tray#waybar.empty #tray {
 }
 
 #backlight {
-    color: @fg;
+    color: @fg_1;
 }
 
 #backlight.bright {
-    background-color: @fg;
+    background-color: @fg_1;
     color: @bg_highlight;
 }
 
